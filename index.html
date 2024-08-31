@@ -6,36 +6,36 @@
     h1 {
       font-family: Arial;
       font-size: 20px;
+      cursor: pointer; /* Change cursor to pointer for clickable element */
+      color: blue; /* Optional: Change color to indicate it's clickable */
+      text-decoration: underline; /* Optional: Underline the text */
     }
     p {
       font-family: Arial;
       font-size: 16px;
     }
+    .content {
+      display: none; /* Initially hide the content */
+      margin-top: 10px;
+    }
   </style>
 </head>
 <body>
   <h1>So, you decided you wanted to sail the high seas? Great! Here's a guide with everything you need to know.</h1>
-  <h1 id="browserTitle">Browser</h1>
-  <div id="browserContent" style="display: none;">
+  <h1 onclick="toggleContent()">Browser</h1>
+  <div class="content" id="browserContent">
     <p>First, you'll need a browser. I recommend <a href="https://librewolf.net/installation/" target="_blank">librewolf</a>. It's an open source privacy focused browser based off firefox, and is perfect for our task.</p>
-    <p>After you've installed librewolf, click on the <a href="https://raw.githubusercontent.com/waterbottleenthusiast/website/main/.github/images/image1.png" target="_blank">uBlock origin extension icon</a> (next to the browser menu) and open <a href="https://raw.githubusercontent.com/waterbottleenthusiast/website/main/.github/images/image2.png" target="_blank">the dashboard</a>. (If uBlock Origin isn't installed on your browser, search 'uBlock origin' on your prefered extension store.)</p>
-    <p>While in the dashboard, head over to the <a href="https://raw.githubusercontent.com/waterbottleenthusiast/website/main/.github/images/image3.png" target="_blank">filters list tab</a> and tick <a href="https://raw.githubusercontent.com/waterbottleenthusiast/website/main/.github/images/image4.png" target="_blank">these</a> boxes. If you scroll a bit further down, you'll find the 'Regions, languages' section. select 'ru ua uz kz: RU AdList' and your own langauge there.</p>
-  </div>
-  <div style="cursor: pointer;" onclick="toggleDisplay('browserContent')">
-    <div style="border-left: 20px solid transparent; border-right: 20px solid transparent; border-top: 20px solid black;"></div>
-    <span id="browserTrigger" style="font-size: 14px; font-weight: bold;">Browser</span>
+    <p>After you've installed librewolf, click on the <a href="https://raw.githubusercontent.com/waterbottleenthusiast/website/main/.github/images/image1.png" target="_blank">uBlock origin extension icon</a> (next to the browser menu) and open <a href="https://raw.githubusercontent.com/waterbottleenthusiast/website/main/.github/images/image2.png" target="_blank">the dashboard</a>. (If uBlock Origin isn't installed on your browser, search 'uBlock origin' on your preferred extension store.)</p>
+    <p>While in the dashboard, head over to the <a href="https://raw.githubusercontent.com/waterbottleenthusiast/website/main/.github/images/image3.png" target="_blank">filters list tab</a> and tick <a href="https://raw.githubusercontent.com/waterbottleenthusiast/website/main/.github/images/image4.png" target="_blank">these</a> boxes. If you scroll a bit further down, you'll find the 'Regions, languages' section. select 'ru ua uz kz: RU AdList' and your own language there.</p>
   </div>
 
   <script>
-    function toggleDisplay(id) {
-      var element = document.getElementById(id);
-      var trigger = document.getElementById('browserTrigger');
-      if (element.style.display === "none") {
-        element.style.display = "block";
-        trigger.innerHTML = "Browser &#9660;";
+    function toggleContent() {
+      const content = document.getElementById('browserContent');
+      if (content.style.display === 'none' || content.style.display === '') {
+        content.style.display = 'block'; // Show the content
       } else {
-        element.style.display = "none";
-        trigger.innerHTML = "Browser &#9650;";
+        content.style.display = 'none'; // Hide the content
       }
     }
   </script>
